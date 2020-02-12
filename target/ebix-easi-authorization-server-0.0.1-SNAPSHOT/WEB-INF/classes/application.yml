@@ -1,0 +1,65 @@
+server:
+  port: 9094
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 'alex@1234'
+        platform: mysql
+        url: jdbc:mysql://localhost:3306/easi?useTimezone=true&serverTimezone=UTC
+        username: alex
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+             
+#ebix:
+#    smtp:
+#        host: smtp.mailtrap.io
+#        auth: true
+#        starttls: false
+#        port: 25
+#    email:
+#        authentication:
+#            user: fa570711ed1f2a
+#            password: 524c775b60488a
+#        address: bf1ab77a2e-138005@inbox.mailtrap.io
+        
+jwt:
+    secretkey: feuFF654gkE876GHG986fjhGtasaqq==HKkjf&sjhdfkhAAA664jhg
+        
+ebix:
+    smtp:
+        host: mail2.ebix.com
+        auth: true
+        starttls: false
+        port: 25
+    email:
+        authentication:
+            user: noreply.ebixbr@delphi
+            password: Change@56
+        address: noreply.ebixbr@ebix.com
+
+easi:
+    appurlaccess: http://localhost:3000
+# teste
+# authserver:
+#  hostname: http://localhost:9092
+# security:
+# oauth2:
+#    resource:
+#      userInfoUri: ${authserver.hostname}/user
